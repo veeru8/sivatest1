@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-      <style>
-      body{
-        background-image: url('home/veeru/Pictures/airoplane.gif');
 
+<style>
+      body{
 
       }
       h1 {
@@ -13,21 +12,18 @@
     }
     .searchBar {
   margin: auto;
-  width: 60%;
+  width: 100%;
   border: 3px solid #73AD21;
   padding: 10px;
   background-color:lightgreen;
 }
 
       </style>
-      <script>{
-document.getElementById('datePicker').valueAsDate = new Date();
-if(date<sysdate)
-alert(invalid date)
-}</script>
+
   </head>
 
   <body>
+
   <h1>ABC TRAVELS</h1>
 <div class="searchBar">
     <label for="source">Source:</label>
@@ -39,8 +35,33 @@ alert(invalid date)
  <option value="RJY">RJY</option>
  <option value="KKD">KKD</option>
  <option value="ANV">ANV</option>
-l}
-</script>
+
+</select>
+<label for="Destination">Destination:</label>
+
+<select name="Destination" id="Destination">
+<option value="VSKP">VSKP</option>
+<option value="HYD">HYD</option>
+<option value="BLR">BLR</option>
+<option value="RJY">RJY</option>
+<option value="KKD">KKD</option>
+<option value="ANV">ANV</option>
+
+</select>
+import { DatePipe } from '@angular/common'
+
+constructor(public datepipe: DatePipe){}
+
+myFunction(){
+ this.date=new Date();
+ let latest_date =this.datepipe.transform(this.date, 'yyyy-MM-dd');
+}
+
+  <form action="Action.html" method="get">
+  <button type="Find Busses">Find Busses</button>
+  </form>
+</div>
+
 
   </body>
 </html>
